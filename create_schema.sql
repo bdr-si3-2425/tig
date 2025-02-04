@@ -14,7 +14,7 @@ DROP TABLE IF EXISTS "Gare" CASCADE;
 
 CREATE TABLE "Gare" (
     "id_gare" SERIAL PRIMARY KEY,
-    "nom" VARCHAR(100) NOT NULL,
+    "nom" VARCHAR(100),
     "localisation" VARCHAR(100),
     "equipements" VARCHAR(255),
     "nbQuais" INTEGER CHECK ("nbQuais" >= 0) 
