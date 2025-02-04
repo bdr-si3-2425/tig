@@ -1,9 +1,9 @@
 INSERT INTO "Gare" ("nom", "localisation", "equipements", "nb_quais") VALUES
-('Gare de Lyon', 'Paris', 'WiFi, Parking, Restaurants', 15),
-('Gare du Nord', 'Paris', 'WiFi,Restaurants', 18),
-('Gare Saint-Charles', 'Marseille', 'Parking, Ascenseurs, Consignes', 12),
-('Gare Part-Dieu', 'Lyon', 'WiFi, Parking, Commerces', 20),
-('Gare de Bordeaux', 'Bordeaux', 'WiFi, Consignes, Loueurs de voitures', 10);
+('Gare de Lyon', 'Paris', 'Extincteurs, Parking, Restaurants', 15),
+('Gare du Nord', 'Paris', 'Extincteurs', 18),
+('Gare Saint-Charles', 'Marseille', 'Extincteurs', 12),
+('Gare Part-Dieu', 'Lyon', 'Extincteurs', 20),
+('Gare de Bordeaux', 'Bordeaux', 'Extincteurs', 10);
 
 INSERT INTO "Ligne" ("nom") VALUES
 ('Paris - Lyon'),
