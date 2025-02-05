@@ -11,13 +11,13 @@ INSERT INTO "Ligne" ("nom") VALUES
 ('Lyon - Bordeaux'),
 ('Bordeaux - Marseille');
 
-INSERT INTO "TypeTrain" ("capacite", "annee_fabrication") VALUES
-(500, 2015),
-(600, 2018),
-(450, 2012),
-(550, 2020);
+INSERT INTO "TypeTrain" ("nom","capacite") VALUES
+('TGV',500),
+('TER',600),
+('TGV',450),
+('TER',550);
 
-INSERT INTO "Train" ("type_train", "last_maintenance", "heures_cumulees") VALUES
+INSERT INTO "Train" ("id_type_train", "last_maintenance", "heures_cumulees") VALUES
 (1, '2024-01-10', 12000),
 (2, '2024-02-15', 15000),
 (3, '2023-12-05', 10000),
@@ -35,8 +35,8 @@ INSERT INTO "TrajetLigne" ("id_trajet", "id_ligne") VALUES
 (3, 3),
 (4, 4);
 
-INSERT INTO "TrainLigne" ("id_ligne", "id_train", "date_affectation") VALUES
-(1, 1, '2024-04-01'),
-(2, 2, '2024-04-02'),
-(3, 3, '2024-04-03'),
-(4, 4, '2024-04-04');
+INSERT INTO "TrainLigne" ("id_ligne", "id_train") VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4);
