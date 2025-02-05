@@ -14,7 +14,7 @@ DROP TABLE IF EXISTS "Gare" CASCADE;
 
 -- Table des gares
 CREATE TABLE "Gare" (
-    "id_gare" INTEGER PRIMARY KEY, -- identifiant de la gare
+    "id_gare" SERIAL PRIMARY KEY, -- identifiant de la gare
     "nom" VARCHAR(100), -- nom de la gare
     "localisation" VARCHAR(100), -- localisation de la gare par le nom de la ville dans laquelle elle se trouve
     "equipements" VARCHAR(255), -- equipements de la gare
@@ -23,20 +23,20 @@ CREATE TABLE "Gare" (
 
 -- Table des lignes
 CREATE TABLE "Ligne" (
-    "id_ligne" INTEGER PRIMARY KEY, -- identifiant de la ligne
+    "id_ligne" SERIAL PRIMARY KEY, -- identifiant de la ligne
     "nom" VARCHAR(100) NOT NULL -- nom de la ligne
 );
 
 -- Table des types de train
 CREATE TABLE "TypeTrain" (
-    "id_type" INTEGER PRIMARY KEY, -- identifiant du type de train
+    "id_type" SERIAL PRIMARY KEY, -- identifiant du type de train
     "nom" VARCHAR(100), -- nom du type de train (ex: TGV, TER, ...)
-    "capacite" INTEGER CHECK ("capacite" > 0), -- capacité du train, contrainte de positivité
+    "capacite" INTEGER CHECK ("capacite" > 0) -- capacité du train, contrainte de positivité
 );
 
 -- Table des trains
 CREATE TABLE "Train" (
-    "id_train" INTEGER PRIMARY KEY, -- identifiant du train
+    "id_train" SERIAL PRIMARY KEY, -- identifiant du train
     "id_type_train" INTEGER NOT NULL, -- identifiant du type de train
     "last_maintenance" TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- date de la dernière maintenance
     "heures_cumulees" INTEGER CHECK ("heures_cumulees" >= 0), -- heures totales de trajet du train, contrainte de positivité
@@ -44,7 +44,7 @@ CREATE TABLE "Train" (
 );
 
 CREATE TABLE "Trajet" (
-    "id_trajet" INTEGER PRIMARY KEY, -- identifiant du trajet
+    "id_trajet" SERIAL PRIMARY KEY, -- identifiant du trajet
     "id_gare_depart" INTEGER NOT NULL, -- identifiant de la gare de départ
     "id_gare_arrivee" INTEGER NOT NULL, -- identifiant de la gare d'arrivée
     "date_depart" TIMESTAMP NOT NULL, -- date de départ
